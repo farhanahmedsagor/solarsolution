@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Solutions Company</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Header Styles */
+    .header {
+      color: #fff;
+      background-color: #000;
+      display: flex;
+      padding: 0 50px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      padding: 20px 0;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo h1 {
+      font-size: 25px;
+    }
+    
+    .navbar ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    .navbar ul li {
+      margin: 0 10px;
+      padding: 10px;
+    }
+    
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+    
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    
+    /* Hero Section */
+    .boddy {
+      background-image: url('img/first\ image.png');
+      width: 80%;
+      margin: 25px auto;
+      padding: 80px 50px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 5px;
+      position: relative;
+      min-height: 400px;
+    }
+    
+    .boddy::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to left, rgba(0,0,0,0) 20%, rgba(0,0,0,0.7) 100%);
+      pointer-events: none;
+    }
+    
+    .boddy h1, .boddy span {
+      font-size: 50px;
+      font-weight: bold;
+      width: 50%;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      line-height: 1.2;
+    }
+    
+    .boddy span.red {
+      color: red;
+    }
+    
+    /* Expertise Section */
+    .Expertise {
+      padding: 50px 0;
+    }
+    
+    .Expertise h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    
+    .experience {
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .childExp {
+      position: relative;
+      width: 23%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      min-height: 300px;
+    }
+    
+    .childExp .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .childExp::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+    }
+    
+    .childExp .content {
+      position: absolute;
+      bottom: 20px;
+      left: 15px;
+      color: white;
+      z-index: 1;
+      width: 80%;
+    }
+    
+    .childExp .content h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    
+    /* Why Choose Us Section */
+    .ontherexp {
+      background-color: #f4f4f4;
+      padding: 50px 0;
+    }
+    
+    .options {
+      width: 80%;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .child {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 0;
+    }
+    
+    .child h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    
+    .child h3 {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    
+    .child p {
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .trdchild {
+      background-color: red;
+      color: #fff;
+    }
+    
+    .trdchild p {
+      color: #fff;
+    }
+    
+    /* Contact Us Section */
+    .contactustoday {
+      padding: 50px 0;
+      background-color: red;
+      color: #fff;
+    }
+    
+    .todaycontent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 80%;
+      margin: 0 auto;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    .contentleft h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .contentleft p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    input[type="button"] {
+      padding: 10px 20px;
+      border-radius: 17px;
+      margin-right: 15px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    input[type="button"]:last-child {
+      color: white;
+      background-color: black;
+    }
+    
+    .contentright {
+      position: relative;
+      height: 400px;
+    }
+    
+    .rightimg img, .leftimg img {
+      border-radius: 10px;
+      width: 60%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .rightimg img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 70%;
+      height: 70%;
+    }
+    
+    .leftimg img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70%;
+      height: 70%;
+    }
+    
+    /* Services Section */
+    .services {
+      padding: 50px 0;
+    }
+    
+    .services h4 {
+      text-align: center;
+      color: red;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .services h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    
+    .solution {
+      margin: 0 auto;
+      width: 80%;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+    }
+    
+    .mene {
+      border-radius: 10px;
+      padding: 30px;
+      background-color: #f3f3f3;
+    }
+    
+    .mene img {
+      height: 50px;
+      margin-bottom: 15px;
+    }
+    
+    .mene h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    .mene p {
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .secsol {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      display: flex;
+      align-items: center;
+    }
+    
+    .secsol img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    /* Footer Styles */
+    .footer {
+      background-color: #000;
+      color: #f3f3f3;
+      padding-top: 50px;
+    }
+    
+    .fcontent {
+      width: 80%;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .fcontent p {
+      line-height: 1.6;
+    }
+    
+    .footer-grid {
+      width: 80%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 30% 20% 20% 30%;
+      gap: 30px;
+      padding: 30px 0;
+      border-bottom: 1px solid #333;
+    }
+    
+    .logo-area {
+      padding-right: 30px;
+    }
+    
+    .logo-area h1 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    
+    .logo-area p {
+      color: #afafaf;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    
+    .link-area, .services-area, .contact-area {
+      padding: 0 15px;
+    }
+    
+    .link-area p, .services-area p, .contact-area p {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .navbar2 ul {
+      list-style: none;
+    }
+    
+    .navbar2 ul li {
+      margin: 10px 0;
+    }
+    
+    .navbar2 ul li a {
+      text-decoration: none;
+      color: #afafaf;
+      font-size: 14px;
+    }
+    
+    .lbtn {
+      margin-top: 20px;
+    }
+    
+    .lbtn a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #f3f3f3;
+      margin-right: 15px;
+      font-weight: bold;
+    }
+    
+    .cright {
+      text-align: center;
+      padding: 20px 0;
+      color: #afafaf;
+      font-size: 14px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .boddy, .experience, .options, .todaycontent, .solution, .footer-grid {
+        width: 90%;
+      }
+      
+      .childExp {
+        width: 48%;
+        margin-bottom: 20px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .boddy h1, .boddy span {
+        font-size: 36px;
+        width: 80%;
+      }
+      
+      .todaycontent {
+        grid-template-columns: 1fr;
+      }
+      
+      .contentright {
+        height: 300px;
+        margin-top: 30px;
+      }
+      
+      .options {
+        grid-template-columns: 1fr;
+      }
+      
+      .solution {
+        grid-template-columns: 1fr;
+      }
+      
+      .secsol {
+        grid-column: 1;
+        grid-row: auto;
+        height: 300px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .logo-area {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .header {
+        padding: 15px;
+      }
+      
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #000;
+        padding: 20px 0;
+        z-index: 1000;
+      }
+      
+      .navbar.active ul {
+        display: flex;
+      }
+      
+      .navbar ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .hamburger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .hamburger.active div:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      
+      .boddy h1, .boddy span {
+        font-size: 28px;
+        width: 100%;
+      }
+      
+      .childExp {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Header Area -->
+  <div class="header">
+    <div class="logo">
+      <img src="img/logo.png" alt="Company Logo">
+      <h1>LOGO HERE</h1>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">SOLAR INITIATIVES</a></li>
+        <li><a href="#">OUR SERVICES</a></li>
+        <li><a href="#">COMMUNITY</a></li>
+        <li><a href="#">AESTHETICS</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="boddy">
+    <h1>Solar <br> <span class="red">Solution</span> for <br> a sustainable tomorrow<span class="red">.</span></h1>
+  </div>
+
+  <!-- Expertise Section -->
+  <div class="Expertise">
+    <h1>Our Expertise and Experience</h1>
+    <div class="experience">
+      <div class="childExp">
+        <div class="image">
+          <img src="img/onex.jpg" alt="Solar Solution">
+        </div>
+        <div class="content">
+          <h2>Solar Solution</h2>
+          <p>Harness the power of the sun and embrace clean, renewable energy with our solar solutions.</p>
+        </div>
+      </div>
+      <div class="childExp">
+        <div class="image">
+          <img src="img/twoex.png" alt="Cable Services">
+        </div>
+        <div class="content">
+          <h2>Cable Services</h2>
+          <p>Stay connected with high-quality cable services that deliver reliable and fast internet, television</p>
+        </div>
+      </div>
+      <div class="childExp">
+        <div class="image">
+          <img src="img/fourex.png" alt="Internet Solutions">
+        </div>
+        <div class="content">
+          <h2>Internet Solutions</h2>
+          <p>From fast broadband to fiber-optic connections, we'll help you find the internet service provider</p>
+        </div>
+      </div>
+      <div class="childExp">
+        <div class="image">
+          <img src="img/threeex.png" alt="Phone Services">
+        </div>
+        <div class="content">
+          <h2>Phone Services</h2>
+          <p>Discover cost-effective and feature-rich phone services that keep you connected to your loved ones</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Us Section -->
+  <div class="ontherexp">
+    <div class="options">
+      <div class="child">
+        <h1>Why Choose Us?</h1>
+        <p>Whether you're looking to switch to solar energy or upgrade your cable services, our sales and marketing company is here to help.</p>
+      </div>
+      <div class="child testme">
+        <h1>01</h1>
+        <h3>Expertise and Experience</h3>
+        <p>With years of experience in the sales and marketing industry, our team has a deep </p>
+      </div>
+      <div class="child trdchild">
+        <h1>02</h1>
+        <h3>Extensive network</h3>
+        <p>We have established strong relationships with the leading solar and cable companies in the region</p>
+      </div>
+      <div class="child testme">
+        <h1>03</h1>
+        <h3>Personalized Approach</h3>
+        <p>We believe that every customer is unique, and their needs should be addressed accordingly</p>
+      </div>
+      <div class="child testme">
+        <h1>04</h1>
+        <h3>Cost Savings</h3>
+        <p>By leveraging our industry knowledge and network, we can help you save money on your solar and cable purchases</p>
+      </div>
+      <div class="child testme">
+        <h1>05</h1>
+        <h3>Hassle-Free Process</h3>
+        <p>We handle all the research, negotiations, and paperwork for you, making the process of finding</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us Section -->
+  <div class="contactustoday">
+    <div class="todaycontent">
+      <div class="contentleft">
+        <h1>Who We Are</h1>
+        <p>Welcome to our sales and marketing company, where we specialize in helping customers snag great deals from the leading solar and cable companies in the DC, Maryland, and Virginia area.We understand that finding the right solar and cable solutions for your needs can be a daunting task, which is why we're here to make the process easier and more affordable for you.</p>
+        <input type="button" value="Read More">
+        <input type="button" value="Contact us today">
+      </div>
+      <div class="contentright">
+        <div class="rightimg">
+          <img src="img/firstimg.jpg" alt="Office image">
+        </div>
+        <div class="leftimg">
+          <img src="img/secimg.jpg" alt="Team image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services">
+    <h4>Our services</h4>
+    <h1>What We Do</h1>
+    <div class="solution">
+      <div class="solutions firsol mene">
+        <img src="img/icon/one.png" alt="Solar Solutions Icon">
+        <h3>Solar Solutions</h3>
+        <p>Harness the power of the sun and embrace clean, renewable energy with our solar solutions.</p>
+      </div>
+      <div class="solutions secsol">
+        <img src="img/first image.png" alt="Solar Panels" class="midimg">
+      </div>
+      <div class="solutions mene">
+        <img src="img/icon/two.png" alt="Deals Icon">
+        <h3>Deals and Promotions</h3>
+        <p>We pride ourselves on securing great deals and promotions for our customers.</p>
+      </div>
+      <div class="solutions mene">
+        <img src="img/icon/three.png" alt="Cable Icon">
+        <h3>Cable Services</h3>
+        <p>Stay connected with high-quality cable services that deliver reliable and fast internet, television</p>
+      </div>
+      <div class="solutions mene">
+        <img src="img/icon/four.png" alt="Support Icon">
+        <h3>Consultation and Support</h3>
+        <p>We understand that navigating the solar and cable landscape can be overwhelming.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="contactus">
+  <div class="contact-form-section">
+    <h2>Contact Us</h2>
+    <div class="contact-form-container">
+      <!-- Contact Form Section -->
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="9" required></textarea>
+        <button type="submit">Send Message</button>
+      </div>
+      <!-- Location Section -->
+      <div class="location">
+        <!-- Embed Google Map -->
+        <div id="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.907798749699!2d90.36012421512304!3d22.346207944722234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375b196cbf8e81d1%3A0x6925f219f2b34558!2sBarisal%20Divisional%20Commissioner%27s%20Office!5e0!3m2!1sen!2sbd!4v1683508531521!5m2!1sen!2sbd"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="fcontent">
+      <p>Whether you're looking to switch to solar energy or upgrade your cable services, our sales and marketing company is here to help. Contact us today to start saving on your energy bills and enjoy reliable connectivity from the leading solar and cable companies in the DC, Maryland, and Virginia area. Snag the best deals with us and embrace a brighter and more connected future.</p>
+    </div>
+    <div class="footer-grid">
+      <div class="logo-area">
+        <img src="img/logo.png" alt="Company Logo">
+        <h1>LOGO HERE</h1>
+        <p>Contact us today to explore our services and take advantage of the great deals available from the leading solar and cable companies in the DC, Maryland, and Virginia area. Let us be your trusted partner in finding the best solutions for your energy and connectivity needs.</p>
+      </div>
+      <div class="link-area">
+        <p>Quick links</p>
+        <div class="navbar2">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">SOLAR INITIATIVES</a></li>
+            <li><a href="#">OUR SERVICES</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+            <li><a href="#">AESTHETICS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="services-area">
+        <div class="navbar2">
+          <p>Solar Solution</p>
+          <ul>
+            <li><a href="#">Cable Services</a></li>
+            <li><a href="#">Deals and Promotions</a></li>
+            <li><a href="#">Consultation and Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="contact-area">
+        <p>Contact</p>
+        <div class="navbar2">
+          <ul>
+            <li><a href="tel:+8801611194327">  <i class="fas fa-phone-alt"></i>
+                01611194327</a></li>
+                <li><a href="https://wa.me/1234567890" target="_blank">  <i class="fab fa-whatsapp"></i>
+                01611194327</a></li>
+            <li><a href="mailto:example@email.com">  <i class="fas fa-envelope"></i>
+                sagorfarhan@gmail.com</a></li>
+          </ul>
+          <div class="lbtn">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cright">
+      <p>© 2025 Sagor Ahmed - developed by FARhan Academy</p>
+    </div>
+  </div>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
